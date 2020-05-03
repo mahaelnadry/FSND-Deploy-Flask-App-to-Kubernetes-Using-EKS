@@ -12,6 +12,7 @@ phases:
       - chmod +x ./kubectl ./aws-iam-authenticator
       - export PATH=$PWD/:$PATH
       - apt-get update && apt-get -y install jq python3-pip python3-dev && pip3 install --upgrade awscli
+      # Configure kubectl
       - aws eks --region us-east-2 update-kubeconfig --name simple-jwt-api
   pre_build:
       commands:
